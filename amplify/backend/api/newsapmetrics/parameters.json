@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "newsapmetrics",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authnewsapmetricse5509977",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
