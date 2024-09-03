@@ -1,0 +1,23 @@
+{
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-newsapmetrics-prod-ed277-authRole",
+      "UnauthRoleArn": "arn:aws:iam::149536492076:role/amplify-newsapmetrics-prod-ed277-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::149536492076:role/amplify-newsapmetrics-prod-ed277-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-newsapmetrics-prod-ed277-deployment",
+      "UnauthRoleName": "amplify-newsapmetrics-prod-ed277-unauthRole",
+      "StackName": "amplify-newsapmetrics-prod-ed277",
+      "StackId": "arn:aws:cloudformation:ap-south-1:149536492076:stack/amplify-newsapmetrics-prod-ed277/79d13100-6a2d-11ef-96a5-021fe78d7e37",
+      "AmplifyAppId": "d2j3ybtqbhkfho"
+    },
+    "categories": {
+      "auth": {
+        "newsapmetricse5509977": {}
+      },
+      "api": {
+        "newsapmetrics": {}
+      }
+    }
+  }
+}
