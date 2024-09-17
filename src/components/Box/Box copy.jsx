@@ -5,15 +5,41 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { UilTimes } from '@iconscout/react-unicons'; 
 import Chart from 'react-apexcharts';
+import { listSMlGS } from 'D:/SAP_METRICS/new_sap_metrics/src/graphql/queries';
+import { Amplify } from 'aws-amplify';
+import awsExports from 'D:/SAP_METRICS/new_sap_metrics/src/aws-exports';
+import { generateClient } from 'aws-amplify/api';
+
+
+Amplify.configure(awsExports);
+const client = generateClient();
 
 const Box = (props) => {
 
     const [expanded, setExpanded] = useState(false)
+
+    // async function to fetchSMLG
+    async function fetchSMLG() {
+        const result = await client.graphql({
+          query: listSMlGS,
+        });
+        const sortedSMLG = result.data.listSMlGS.items;
+        
+        sortedSMLG.sort((a, b) => {
+        const timeA = a.TIME.slice(0, 10) + ' ' + a.TIME.slice(10);
+        const timeB = b.TIME.slice(0, 10) + ' ' + b.TIME.slice(10);
+        return new Date(timeA) - new Date(timeB);
+      });
+        console.log(sortedSMLG);
+        // setSortedSMLG(sortedSMLG);
+    }
+
+
     
     function CompactCard ({ param, setExpanded }) {
         const Png = param.png
         return(
-            <div className='CompactCard' style={{background: param.color.backGround, boxShadow: param.color.boxShadow}} onClick= { setExpanded } layoutId='expandableCard'>
+            <div className='CompactCard' style={{background: param.color.backGround, boxShadow: param.color.boxShadow}} onClick={() => { setExpanded(); fetchSMLG(); }} layoutId='expandableCard'>
                 <div className='radialBar'>
                     <CircularProgressbar value={param.barValue} text={`${param.barValue}%`} />
                     <span>{param.title}</span>

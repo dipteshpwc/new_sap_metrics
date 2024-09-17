@@ -4,7 +4,7 @@ import Logo from '../../imgs/logo.png'
 import PwcLogo from '../../imgs/pwc_logo.png'
 
 // import {UilEstate} from "@iconscout/react-unicons"; //Since added sep in Data.js
-import { SidebarData } from '../../Data/Data.js';
+import { SidebarData } from '../../Data/Data';
 import { UilSignOutAlt, UilBars } from '@iconscout/react-unicons';
 import { motion } from 'framer-motion';
 

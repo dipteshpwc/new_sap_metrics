@@ -1,7 +1,3 @@
-import React from 'react'
-import Chart from 'react-apexcharts'
-import dayjs from 'dayjs'
-
 // Sidebar imports
 import {
     UilEstate,
@@ -160,8 +156,7 @@ export const trendsData = [
   {
     title: "Batch Jobs",
     color: {
-      backGround:
-        "linear-gradient(rgb(248, 212, 154) -146.42%, rgb(255 202 113) -46.42%)",
+      backGround: "linear-gradient(rgb(248, 212, 154) -146.42%, rgb(255 202 113) -46.42%)",
       boxShadow: "0px 10px 20px 0px #F9D59B",
     },
     barValue: 60,

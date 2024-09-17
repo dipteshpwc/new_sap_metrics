@@ -39,13 +39,10 @@ const Trends = () => {
           client.graphql({ query: listSMlGS }),
         ]);
 
-        const sorted_result1 = processSMLGData(result1.data.listSMlGS);
-        const sorted_result2 = processSMLGData(result2.data.listSMlGS);
-
-        setSortedSMLG1(sorted_result1);
-        console.log(sorted_result1)
-        setSortedSMLG2(sorted_result2);
-        console.log(sorted_result2)
+        setSortedSMLG1(result1.data.listSMlGS.items);
+        console.log(result1.data.listSMlGS.items)
+        setSortedSMLG2(result2.data.listSMlGS.items);
+        console.log(result2.data.listSMlGS.items)
       } catch (error) {
         console.error("Error fetching data:", error);
       }
